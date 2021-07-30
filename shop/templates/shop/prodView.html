@@ -1,0 +1,108 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%} {{product.product_name}} - My Awesome Cart{% endblock %}
+{% block body %}
+<style>
+    .img-design {
+        border: 6px solid skyblue;
+        padding: 82px;
+        background-color: blanchedalmond;
+    }
+
+    .text-design {
+        padding: 43px;
+        background-color: skyblue;
+    }
+
+    .prduct-name-design {
+        font-size: 49px;
+    }
+
+    .price {
+        color: gold;
+        font-size: 39px;
+    }
+
+    .description-of-product {
+        font-size: 19px;
+    }
+</style>
+<div class="container my-2">
+    <div class="row">
+        <div class="col-md-4 img-design">
+            <div class="row">
+                <img src="/media/{{product.image}}" width="474px" height="360px">
+            </div>
+            <div class="row">
+                <button class="btn btn-primary mx-3">Buy Now</button>
+                <button class="btn btn-primary">Add To Cart</button>
+            </div>
+        </div>
+        <div class="col-md-8 text-design">
+            <u>
+                <h3 class="text-success prduct-name-design">{{product.product_name}}</h3>
+            </u>
+
+            <p class="text-warinig price"><b>Rs. {{product.price}} </b></p>
+            <p class="description-of-product">{{product.desc}}
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam alias error, quam quisquam
+                praesentium, consequatur sint aspernatur mollitia vero et vel recusandae tempore. Dolorum maxime
+                explicabo veniam a neque quam!
+                <br>
+
+            </p>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+{% block js %}
+<script>
+    console.log('working');
+    if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    }
+    else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+        document.getElementById('cart').innerHTML = Object.keys(cart).length;
+    }
+    $('.cart').click(function () {
+        console.log('clicked');
+        var idstr = this.id.toString();
+        console.log(idstr);
+        if (cart[idstr] != undefined) {
+            cart[idstr] = cart[idstr] + 1;
+        }
+        else {
+            cart[idstr] = 1;
+        }
+        console.log(cart);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        document.getElementById('cart').innerHTML = Object.keys(cart).length;
+    });
+    $('#popcart').popover();
+    document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
+</script>
+{% endblock %}

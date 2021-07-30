@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <!-- links of all the websit -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.min.css' %}">
+    <!--  end of links of all the websit -->
+    <!--  fontawasome -->
+    <script src="{% static 'js/all.js'%}"></script>
+
+    <!-- end of fontawasome -->
+
+    <script src="{% static 'js/bootstrap.js ' %}"></script>
+    <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js.map' %}"></script>
+    <link rel="stylesheet" href="../">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!--Typed.js-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typed.js"></script>
+
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+
+<body>
+
+
+
+    {% block css %} {% endblock %}
+    <style>
+        .col-md-3 {
+            display: inline-block;
+            margin-left: -4px;
+        }
+
+        .carousel-indicators .active {
+            background-color: blue;
+        }
+
+        .col-md-3 img {
+            width: 170px;
+            height: 200px;
+        }
+
+        body .carousel-indicator li {
+            background-color: blue;
+        }
+
+        body .carousel-indicators {
+            bottom: 0;
+        }
+
+        body .carousel-control-prev-icon,
+        body .carousel-control-next-icon {
+            background-color: blue;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            top: auto;
+            bottom: auto;
+            padding-top: 222px;
+        }
+
+        body .no-padding {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    </style>
+    <!--   .navbar {
+            top: 0px;
+            position: sticky;
+
+        } -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/shop">My Awesome Cart</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/shop">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/shop/about">About Us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/shop/tracker">Tracker</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/blog">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/shop/contact">Contact Us</a>
+                </li>
+
+
+            </ul>
+            <form method="GET" action="/shop/search/" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" id="search"
+                    aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body"
+                data-toggle="popover" data-placement="bottom" data-html="true"
+                data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                Cart(<span id="cart">0</span>)
+            </button>
+        </div>
+    </nav>
+    {% block body %} {% endblock %}
+    <div class="conatiner-fluid bg-dark text-light py-2">
+        <p class="text-center">
+            &copy; Copyright 2020 | All rights reserved <br>
+        <div class="text-center">
+            <a href="#">Backtop </a>
+            <a href="#">||Privaicy||</a>
+            <a href="#">conatact us</a>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    {% block js %} {% endblock %}
+</body>
+
+</html>

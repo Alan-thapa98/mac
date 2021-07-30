@@ -1,0 +1,1 @@
+thse is the demo text  there i can learn about the featutes of the django 
